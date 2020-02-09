@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'about.apps.AboutConfig',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core.urls'
+APPEND_SLASH = True
 
 TEMPLATES = [
     {
@@ -101,6 +104,54 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning',
+#     'DEFAULT_VERSION': 'v1',
+#     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticatedOrReadOnly',),
+#     # support both session and token auth for dev and staging, cos docs
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#     ),
+#     'DEFAULT_PAGINATION_CLASS': 'fieldstone.pagination.LimitOffsetPagination',
+#     'EXCEPTION_HANDLER': 'fieldstone.exceptions.exception_handler',
+#     'DEFAULT_RENDERER_CLASSES': (
+#         'fieldstone.renderers.SafeBigIntegersJSONRenderer',
+#         'fieldstone.renderers.IndentedJSONRenderer',
+#     ),
+#     # liberal rate limiting by default to not impede regular usage
+#     # but deter abuse
+#     'DEFAULT_THROTTLE_CLASSES': (
+#         'fieldstone.throttling.UserBurstRateThrottle',
+#         'fieldstone.throttling.UserSustainedRateThrottle',
+#         'fieldstone.throttling.AnonBurstRateThrottle',
+#         'fieldstone.throttling.AnonSustainedRateThrottle',
+#     ),
+#     'DEFAULT_THROTTLE_RATES': {
+#         'user-burst': '100/min',
+#         'user-sustained': '1000/hour',
+#         'anon-burst': '100/min',
+#         'anon-sustained': '1000/hour',
+#     },
+#     # allow custom sections in our schema generation to enrich docs
+#     'DEFAULT_SCHEMA_CLASS': 'fieldstone.docs.schemas.SubsectionSchema',
+#     # use HTTP verbs as much as possible - this impacts docs rendering
+#     'SCHEMA_COERCE_METHOD_NAMES': {
+#         'partial_update': 'patch',
+#         'destroy': 'delete',
+#         'create': 'post',
+#         'retrieve': 'get',
+#         'update': 'put',
+#     },
+#     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+#     'TEST_REQUEST_RENDERER_CLASSES': (
+#         'rest_framework.renderers.JSONRenderer',
+#         # renderers allowing us to submit various types of data in tests
+#         'fieldstone.tests.renderers.JPGRenderer',
+#         'rest_framework.renderers.MultiPartRenderer',
+#         'fieldstone.tests.renderers.MSWordRenderer',
+#     ),
+# }
 
 
 # Internationalization
