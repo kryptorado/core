@@ -1,0 +1,11 @@
+# Backend DB
+db/
+
+# PyCharm ide files
+.idea
+
+# Swap files for vim
+*.swp
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
