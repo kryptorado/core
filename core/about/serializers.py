@@ -7,7 +7,7 @@ class EducationSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Education
         fields = (
-            'name',
+            'school_name',
             'start_date',
             'end_date',
         )
