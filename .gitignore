@@ -9,3 +9,8 @@ db/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
