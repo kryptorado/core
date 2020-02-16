@@ -17,7 +17,3 @@ class Education(models.Model):
     end_date = models.DateField(null=True, blank=True)
     major = models.CharField(max_length=256, blank=True)
     degree_type = models.CharField(max_length=256, blank=True)
-
-    def __str__(self):
-        return f'Profile: {self.profile}'
-
